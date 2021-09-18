@@ -122,53 +122,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private final SparseArray<String> mSettingMap;
     private KeyguardManager mKeyguardManager;
 
-    private String mRearCameraId;
-    private boolean mTorchEnabled;
-
-    private final TorchCallback mTorchCallback = new TorchCallback() {
-        @Override
-        public void onTorchModeChanged(String cameraId, boolean enabled) {
-            if (cameraId.equals(mRearCameraId)) {
-                mTorchEnabled = enabled;
-            }
-        }
-
-        @Override
-        public void onTorchModeUnavailable(String cameraId) {
-            if (cameraId.equals(mRearCameraId)) {
-                mTorchEnabled = false;
-            }
-        }
-    };
-
-    private final AvailabilityCallback mAvailabilityCallback = new AvailabilityCallback() {
-        @Override
-        public void onCameraAvailable(@NonNull String cameraId) {
-            try {
-                if (mRearCameraId != null) {
-                    return;
-                }
-                CameraCharacteristics cc = mCameraManager.getCameraCharacteristics(cameraId);
-                Integer lensFacing = cc.get(LENS_FACING);
-                if (lensFacing != null && lensFacing.intValue() == LENS_FACING_BACK) {
-                    Boolean flashAvailable = cc.get(FLASH_INFO_AVAILABLE);
-                    if (flashAvailable != null && flashAvailable.booleanValue()) {
-                        mRearCameraId = cameraId;
-                    }
-                }
-            } catch (CameraAccessException e) {
-                // Ignore
-            }
-        }
-
-        @Override
-        public void onCameraUnavailable(@NonNull String cameraId) {
-            if (mRearCameraId != null && mRearCameraId.equals(cameraId)) {
-                mRearCameraId = null;
-            }
-        }
-    };
-
     public KeyHandler(Context context) {
         mContext = context;
         mResolver = mContext.getContentResolver();
