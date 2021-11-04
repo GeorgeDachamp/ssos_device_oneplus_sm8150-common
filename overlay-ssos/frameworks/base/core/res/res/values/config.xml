@@ -69,4 +69,13 @@
     <!-- Whether device has notification led -->
     <bool name="config_hasNotificationLed">false</bool>
 
+     <!-- Allow devices override audio panel location to the left side -->
+    <bool name="config_audioPanelOnLeftSide">true</bool>
+
+    <!-- FPSInfoService FPS node file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps</string>
+
+    <!-- Whether to use new FPS info impl -->
+    <bool name="config_usesNewFPS">true</bool>
+
 </resources>
