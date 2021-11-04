@@ -233,9 +233,6 @@ public class TouchKeyHandler implements DeviceKeyHandler {
                 case Constants.ACTION_AMBIENT_DISPLAY:
                     launchDozePulse();
                     break;
-                case Constants.ACTION_WAKE_DEVICE:
-                    wakeDevice();
-                    break;
             }
         }
     }
@@ -333,11 +330,6 @@ public class TouchKeyHandler implements DeviceKeyHandler {
             mContext.sendBroadcastAsUser(intent, UserHandle.CURRENT);
             doHapticFeedback();
         }
-    }
-
-    private void wakeDevice() {
-        mGestureWakeLock.acquire(GESTURE_WAKELOCK_DURATION);
-        mPowerManager.wakeUp(SystemClock.uptimeMillis(), GESTURE_WAKEUP_REASON);
     }
 
     private void dispatchMediaKeyWithWakeLockToMediaSession(final int keycode) {
