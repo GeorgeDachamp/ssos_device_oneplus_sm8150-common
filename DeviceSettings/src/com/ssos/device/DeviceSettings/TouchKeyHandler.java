@@ -42,7 +42,6 @@ import android.os.PowerManager;
 import android.os.PowerManager.WakeLock;
 import android.os.SystemClock;
 import android.os.UserHandle;
-import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.util.Log;
@@ -370,7 +369,7 @@ public class TouchKeyHandler implements DeviceKeyHandler {
             final boolean enabled = Settings.System.getInt(mContext.getContentResolver(),
                     Settings.System.TOUCHSCREEN_GESTURE_HAPTIC_FEEDBACK, 1) != 0;
             if (enabled) {
-                mVibrator.vibrate(VibrationEffect.get(VibrationEffect.EFFECT_HEAVY_CLICK));
+                mVibrator.vibrate(50);
             }
         }
     }
