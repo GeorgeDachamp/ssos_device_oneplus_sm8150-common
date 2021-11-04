@@ -14,7 +14,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           android:sharedUserId="android.uid.system"
-          package="com.dot.device.DeviceSettings"
+          package="com.ssos.device.DeviceSettings"
           android:versionCode="1"
           android:versionName="1.0" >
 
@@ -24,9 +24,9 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.CAMERA" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SETTINGS" />
+    <protected-broadcast android:name="com.ssos.device.DeviceSettings.UPDATE_SETTINGS" />
 
-    <protected-broadcast android:name="com.derp.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
+    <protected-broadcast android:name="com.ssos.device.DeviceSettings.UPDATE_SLIDER_POSITION" />
 
     <uses-sdk
         android:minSdkVersion="28"
@@ -63,7 +63,7 @@
             android:theme="@style/AppTheme">
         </activity>
 
-        <receiver android:name="com.derp.device.DeviceSettings.Startup" >
+        <receiver android:name="com.ssos.device.DeviceSettings.Startup" >
             <intent-filter android:priority="100" >
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
@@ -72,7 +72,7 @@
         <!-- Search indexing -->
         <provider
             android:name=".ConfigPanelSearchIndexablesProvider"
-            android:authorities="com.dot.device"
+            android:authorities="com.ssos.device"
             android:multiprocess="false"
             android:grantUriPermissions="true"
             android:permission="android.permission.READ_SEARCH_INDEXABLES"
