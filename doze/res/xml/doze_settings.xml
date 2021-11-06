@@ -24,7 +24,7 @@
         android:summary="@string/ambient_display_always_on_summary"
         android:persistent="false" />
 
-   <PreferenceCategory
+    <PreferenceCategory
         android:title="@string/screen_off_settings_title">
 
         <Preference
