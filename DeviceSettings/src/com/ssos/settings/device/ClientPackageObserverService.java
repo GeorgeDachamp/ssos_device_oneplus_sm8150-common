@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.krypton.settings.device;
+package com.ssos.settings.device;
 
 import static android.content.Intent.ACTION_SCREEN_OFF;
 import static android.content.Intent.ACTION_SCREEN_ON;
@@ -30,8 +30,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.android.internal.util.krypton.FileUtils;
-import com.android.internal.util.krypton.KryptonUtils;
+import com.android.internal.util.ssos.FileUtils;
+import com.android.internal.util.ssos.ssosUtils;
 
 import java.io.File;
 
@@ -85,7 +85,7 @@ public class ClientPackageObserverService extends Service {
     @Override
     public void onCreate() {
         logD("onCreate");
-        mIsOpCameraInstalledAndActive = KryptonUtils.isPackageInstalled(this,
+        mIsOpCameraInstalledAndActive = ssosUtils.isPackageInstalled(this,
             CLIENT_PACKAGE_NAME, false /** ignore state */);
         logD("mIsOpCameraInstalledAndActive = " + mIsOpCameraInstalledAndActive);
         final IntentFilter filter = new IntentFilter();
@@ -112,7 +112,7 @@ public class ClientPackageObserverService extends Service {
     }
 
     private void registerClientObserver() {
-        mIsOpCameraInstalledAndActive = KryptonUtils.isPackageInstalled(this,
+        mIsOpCameraInstalledAndActive = ssosUtils.isPackageInstalled(this,
             CLIENT_PACKAGE_NAME, false /** ignore state */);
         if (mIsOpCameraInstalledAndActive && mFileObserver != null &&
                 !mIsClientObserverRegistered) {
