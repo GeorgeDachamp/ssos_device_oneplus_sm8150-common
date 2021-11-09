@@ -18,6 +18,13 @@
 package com.ssos.settings.device;
 
 public class Constants {
+<<<<<<< HEAD:DeviceSettings/src/com/ssos/settings/device/Constants.java
+
+    // Broadcast action for settings update
+    static final String UPDATE_PREFS_ACTION = "com.ssos.settings.device.UPDATE_SETTINGS";
+
+=======
+>>>>>>> cb167feb (DeviceSettings: rework touchscreen gesture handling):DeviceSettings/src/com/krypton/settings/device/Constants.java
     // Screen off Gesture actions
     static final int ACTION_FLASHLIGHT = 1;
     static final int ACTION_CAMERA = 2;
