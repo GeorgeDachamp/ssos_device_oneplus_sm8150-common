@@ -16,6 +16,10 @@
 
 package com.ssos.settings.device;
 
+import androidx.preference.CheckBoxPreference;
+import androidx.preference.Preference;
+import androidx.preference.SwitchPreference;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -26,6 +30,16 @@ import java.io.FileReader;
 public class Utils {
 
     private static final String TOUCHSCREEN_GESTURE_FORMAT = "touchscreen_gesture_%s_title";
+
+    public static boolean isChecked(Preference preference) {
+        boolean checked = false;
+        if (preference instanceof SwitchPreference) {
+            checked = ((SwitchPreference) preference).isChecked();
+        } else if (preference instanceof SwitchPreference) {
+            checked = ((CheckBoxPreference) preference).isChecked();
+        }
+        return checked;
+    }
 
     public static String getResName(String name) {
         return String.format(TOUCHSCREEN_GESTURE_FORMAT, name.toLowerCase().replace(" ", "_"));
