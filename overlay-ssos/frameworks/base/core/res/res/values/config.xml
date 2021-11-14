@@ -17,13 +17,16 @@
     <string-array name="config_deviceKeyHandlerLibs" translatable="false">
         <item>/system/priv-app/LineageParts/LineageParts.apk</item>
         <item>/system/priv-app/KeyHandler/KeyHandler.apk</item>
-        <item>/system/system_ext/priv-app/DeviceSettings/DeviceSettings.apk</item>
     </string-array>
 
     <!-- Names of the key handler classes -->
     <string-array name="config_deviceKeyHandlerClasses" translatable="false">
         <item>org.lineageos.lineageparts.gestures.KeyHandler</item>
+<<<<<<< HEAD
 	<item>com.ssos.settings.device.KeyHandler</item>
+=======
+        <item>org.lineageos.settings.device.KeyHandler</item>
+>>>>>>> parent of b4282a56 (sm8150-common: introduce DeviceSettings)
     </string-array>
 
     <!-- Whether device has warp charging support -->
