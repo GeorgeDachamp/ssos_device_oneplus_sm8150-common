@@ -22,8 +22,11 @@ import androidx.preference.SwitchPreference;
 
 public class Utils {
 
+<<<<<<< HEAD
     private static final String TOUCHSCREEN_GESTURE_FORMAT = "touchscreen_gesture_%s_title";
 
+=======
+>>>>>>> parent of dcb36870 (sm8150-common: DeviceSettings: Add Touchscreen Gesture controls)
     public static boolean isChecked(Preference preference) {
         boolean checked = false;
         if (preference instanceof SwitchPreference) {
@@ -34,7 +37,10 @@ public class Utils {
         return checked;
     }
 
+<<<<<<< HEAD
     public static String getResName(String name) {
         return String.format(TOUCHSCREEN_GESTURE_FORMAT, name.toLowerCase().replace(" ", "_"));
     }
+=======
+>>>>>>> parent of dcb36870 (sm8150-common: DeviceSettings: Add Touchscreen Gesture controls)
 }

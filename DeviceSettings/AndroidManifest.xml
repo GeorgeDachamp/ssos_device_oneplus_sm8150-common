@@ -17,20 +17,24 @@
     package="com.ssos.settings.device"
     android:sharedUserId="android.uid.system">
 
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.DEVICE_POWER" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+=======
+>>>>>>> parent of dcb36870 (sm8150-common: DeviceSettings: Add Touchscreen Gesture controls)
     <uses-permission android:name="android.permission.VIBRATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <protected-broadcast android:name="KeyEvent.SLIDER_KEY_CHANGED" />
+<<<<<<< HEAD
     <protected-broadcast android:name="android.intent.action.SCREEN_CAMERA_GESTURE" />
 
     <uses-sdk
         android:minSdkVersion="30"
         android:targetSdkVersion="30" />
+=======
+>>>>>>> parent of dcb36870 (sm8150-common: DeviceSettings: Add Touchscreen Gesture controls)
 
     <application
         android:title="@string/device_settings_title"
@@ -46,6 +50,7 @@
                 <action android:name="com.android.settings.action.EXTRA_SETTINGS" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
 
         <activity
             android:name=".TouchscreenGestureSettingsActivity"
@@ -56,5 +61,7 @@
                 <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+=======
+>>>>>>> parent of dcb36870 (sm8150-common: DeviceSettings: Add Touchscreen Gesture controls)
     </application>
 </manifest>
