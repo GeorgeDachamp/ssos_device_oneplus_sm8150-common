@@ -107,7 +107,6 @@ public class KeyHandler implements DeviceKeyHandler {
     private final CameraManager mCameraManager;
     private final Vibrator mVibrator;
     private final SparseArray<String> mSettingMap;
-    private KeyguardManager mKeyguardManager;
 
     private String mRearCameraId;
     private boolean mTorchEnabled;
@@ -207,9 +206,8 @@ public class KeyHandler implements DeviceKeyHandler {
         if (key == null) {
             return false;
         } else if (key.equals(Utils.getResName(SINGLE_TAP_GESTURE))) {
-            getKeyguardManagerService();
-            if (mKeyguardManager != null && !mKeyguardManager.isDeviceLocked()) {
-                // Wakeup the device if not locked
+            if (!mContext.getSystemService(KeyguardManager.class).isDeviceLocked()) {
+                // Wake up the device if it's not locked
                 wakeUp();
                 return true;
             }
@@ -354,13 +352,6 @@ public class KeyHandler implements DeviceKeyHandler {
             return null;
         }
         return pm.getLaunchIntentForPackage(resInfo.get(0).activityInfo.packageName);
-    }
-
-    private void getKeyguardManagerService() {
-        if (mKeyguardManager != null) {
-            return;
-        }
-        mKeyguardManager = mContext.getSystemService(KeyguardManager.class);
     }
 
     private final class EventHandler extends Handler {
